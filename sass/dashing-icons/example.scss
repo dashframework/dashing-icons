@@ -1,0 +1,21 @@
+.icon-grid {
+  border: 2px solid transparent;
+  border-radius: 5px;
+  margin: 0.5rem;
+  padding: 1rem;
+  float: left;
+  &:hover {
+    border: 2px solid $gray-100;
+  }
+}
+
+.icon-container {
+  @extend .icon-grid;
+  border-color: $gray-100;
+  margin: 0 1rem 0 0;
+}
+
+hr {
+  border: 0;
+  border-top: 2px solid $gray-100;
+}
