@@ -60,10 +60,6 @@ $red-icon:       C43220;
   &.icon-size-normal {
     height: 16px;
     width: 16px;
-    %action & {
-      margin: 0.15rem 0.3rem 0 0;
-      &.float-right { margin: 0.15rem 0 0 0.3rem; }
-    }
   }
 
   &.icon-add-person {
