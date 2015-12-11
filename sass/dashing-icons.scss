@@ -1,5 +1,7 @@
 /*! dashing-icons v1.0.0 | MIT License */
 
+/* Dashing-Icons Mixins
+  =========================================================================== */
 @mixin icon-add-person($color) { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><g><ellipse fill="%23#{$color}" cx="5.498" cy="7.5" rx="3.494" ry="3.5"/><path fill="%23#{$color}" d="M5.533,11C2,11,0,13.208,0,16h11C11,13.208,9,11,5.533,11z"/><polygon fill="%23#{$color}" points="14,2 14,0 12,0 12,2 10,2 10,4 12,4 12,6 14,6 14,4 16,4 16,2 	"/></g></svg>'); }
 @mixin icon-arrow($color) { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="%23#{$color}" d="M8,11.875c-0.224,0-0.448-0.085-0.619-0.256L1.256,5.494c-0.342-0.342-0.342-0.896,0-1.237 c0.342-0.342,0.896-0.342,1.237,0L8,9.763l5.506-5.506c0.342-0.342,0.896-0.342,1.237,0c0.342,0.342,0.342,0.896,0,1.237 l-6.125,6.125C8.448,11.79,8.224,11.875,8,11.875z"/></svg>'); }
 @mixin icon-alert-filled($color) { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="%23#{$color}" d="M8,0C3.58,0,0,3.58,0,8s3.58,8,8,8s8-3.58,8-8S12.42,0,8,0z M9,13H7v-2h2V13z M9,10H7V3h2V10z"/></svg>'); }
@@ -44,453 +46,463 @@
 
 // %23#{$color}
 
-$white-icon:     FFFFFF;
-$gray-800-icon:  3b3b3b;
-$blue-icon:      6a8dd3;
-$green-icon:     149853;
-$orange-icon:    C47A18;
-$red-icon:       C43220;
+/* Dashing-Icons Variables
+  =========================================================================== */
 
-.icon {
+$dashing-icon--white:     FFFFFF;
+$dashing-icon--gray-800:  3b3b3b;
+$dashing-icon--blue:      6a8dd3;
+$dashing-icon--green:     149853;
+$dashing-icon--orange:    C47A18;
+$dashing-icon--red:       C43220;
+
+/* Dashing-Icons Styles
+  =========================================================================== */
+%action {
+  .dashing-icon.dashing-icon--size-normal {
+    margin: 0.15rem 0.3rem 0 -0.2rem;
+    &.float-right { margin: 0.15rem -0.2rem 0 0.3rem; }
+  }
+}
+
+.dashing-icon {
   background-repeat: no-repeat;
   background-size: 100%;
   float: left;
   opacity: .9;
 
-  &.icon-size-normal {
+  &.dashing-icon--size-normal {
     height: 16px;
     width: 16px;
   }
 
-  &.icon-add-person {
-    @include icon-add-person($gray-800-icon);
-    &.blue { @include icon-add-person($blue-icon); }
-    &.green { @include icon-add-person($green-icon); }
-    &.orange { @include icon-add-person($orange-icon); }
-    &.red { @include icon-add-person($red-icon); }
-    &.white { @include icon-add-person($white-icon); }
+  &.dashing-icon__add-person {
+    @include icon-add-person(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-add-person($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-add-person($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-add-person($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-add-person($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-add-person($dashing-icon--white); }
   }
 
-  &.icon-arrow-down,
-  &.icon-chevron-down
-  &.icon-chevron {
-    @include icon-arrow($gray-800-icon);
-    &.blue { @include icon-arrow($blue-icon); }
-    &.green { @include icon-arrow($green-icon); }
-    &.orange { @include icon-arrow($orange-icon); }
-    &.red { @include icon-arrow($red-icon); }
-    &.white { @include icon-arrow($white-icon); }
+  &.dashing-icon__arrow-down,
+  &.dashing-icon__chevron-down
+  &.dashing-icon__chevron {
+    @include icon-arrow(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-arrow($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-arrow($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-arrow($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-arrow($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-arrow($dashing-icon--white); }
   }
 
-  &.icon-arrow-up,
-  &.icon-chevron-up {
-    @include icon-arrow($gray-800-icon);
+  &.dashing-icon__arrow-up,
+  &.dashing-icon__chevron-up {
+    @include icon-arrow(dashing-icon--gray-800);
     transform: rotate(180deg);
-    &.blue { @include icon-arrow($blue-icon); }
-    &.green { @include icon-arrow($green-icon); }
-    &.orange { @include icon-arrow($orange-icon); }
-    &.red { @include icon-arrow($red-icon); }
-    &.white { @include icon-arrow($white-icon); }
+    &.dashing-icon--blue { @include icon-arrow($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-arrow($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-arrow($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-arrow($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-arrow($dashing-icon--white); }
   }
 
-  &.icon-arrow-left,
-  &.icon-chevron-left {
-    @include icon-arrow($gray-800-icon);
+  &.dashing-icon__arrow-left,
+  &.dashing-icon__chevron-left {
+    @include icon-arrow(dashing-icon--gray-800);
     transform: rotate(90deg);
-    &.blue { @include icon-arrow($blue-icon); }
-    &.green { @include icon-arrow($green-icon); }
-    &.orange { @include icon-arrow($orange-icon); }
-    &.red { @include icon-arrow($red-icon); }
-    &.white { @include icon-arrow($white-icon); }
+    &.dashing-icon--blue { @include icon-arrow($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-arrow($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-arrow($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-arrow($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-arrow($dashing-icon--white); }
   }
 
-  &.icon-arrow-right,
-  &.icon-chevron-right {
-    @include icon-arrow($gray-800-icon);
+  &.dashing-icon__arrow-right,
+  &.dashing-icon__chevron-right {
+    @include icon-arrow(dashing-icon--gray-800);
     transform: rotate(270deg);
-    &.blue { @include icon-arrow($blue-icon); }
-    &.green { @include icon-arrow($green-icon); }
-    &.orange { @include icon-arrow($orange-icon); }
-    &.red { @include icon-arrow($red-icon); }
-    &.white { @include icon-arrow($white-icon); }
+    &.dashing-icon--blue { @include icon-arrow($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-arrow($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-arrow($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-arrow($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-arrow($dashing-icon--white); }
   }
 
-  &.icon-alert-filled {
-    @include icon-alert-filled($gray-800-icon);
-    &.blue { @include icon-alert-filled($blue-icon); }
-    &.green { @include icon-alert-filled($green-icon); }
-    &.orange { @include icon-alert-filled($orange-icon); }
-    &.red { @include icon-alert-filled($red-icon); }
-    &.white { @include icon-alert-filled($white-icon); }
+  &.dashing-icon__alert-filled {
+    @include icon-alert-filled(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-alert-filled($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-alert-filled($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-alert-filled($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-alert-filled($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-alert-filled($dashing-icon--white); }
   }
 
-  &.icon-alert-stroke {
-    @include icon-alert-stroke($gray-800-icon);
-    &.blue { @include icon-alert-stroke($blue-icon); }
-    &.green { @include icon-alert-stroke($green-icon); }
-    &.orange { @include icon-alert-stroke($orange-icon); }
-    &.red { @include icon-alert-stroke($red-icon); }
-    &.white { @include icon-alert-stroke($white-icon); }
+  &.dashing-icon__alert-stroke {
+    @include icon-alert-stroke(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-alert-stroke($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-alert-stroke($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-alert-stroke($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-alert-stroke($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-alert-stroke($dashing-icon--white); }
   }
 
-  &.icon-calendar,
-  &.icon-date {
-    @include icon-calendar($gray-800-icon);
-    &.blue { @include icon-calendar($blue-icon); }
-    &.green { @include icon-calendar($green-icon); }
-    &.orange { @include icon-calendar($orange-icon); }
-    &.red { @include icon-calendar($red-icon); }
-    &.white { @include icon-calendar($white-icon); }
+  &.dashing-icon__calendar,
+  &.dashing-icon__date {
+    @include icon-calendar(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-calendar($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-calendar($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-calendar($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-calendar($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-calendar($dashing-icon--white); }
   }
 
-  &.icon-checkmark {
-    @include icon-checkmark($gray-800-icon);
-    &.blue { @include icon-checkmark($blue-icon); }
-    &.green { @include icon-checkmark($green-icon); }
-    &.orange { @include icon-checkmark($orange-icon); }
-    &.red { @include icon-checkmark($red-icon); }
-    &.white { @include icon-checkmark($white-icon); }
+  &.dashing-icon__checkmark {
+    @include icon-checkmark(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-checkmark($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-checkmark($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-checkmark($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-checkmark($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-checkmark($dashing-icon--white); }
   }
 
-  &.icon-checkmark-filled {
-    @include icon-checkmark-filled($gray-800-icon);
-    &.blue { @include icon-checkmark-filled($blue-icon); }
-    &.green { @include icon-checkmark-filled($green-icon); }
-    &.orange { @include icon-checkmark-filled($orange-icon); }
-    &.red { @include icon-checkmark-filled($red-icon); }
-    &.white { @include icon-checkmark-filled($white-icon); }
+  &.dashing-icon__checkmark-filled {
+    @include icon-checkmark-filled(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-checkmark-filled($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-checkmark-filled($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-checkmark-filled($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-checkmark-filled($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-checkmark-filled($dashing-icon--white); }
   }
 
-  &.icon-checkmark-stroke {
-    @include icon-checkmark-stroke($gray-800-icon);
-    &.blue { @include icon-checkmark-stroke($blue-icon); }
-    &.green { @include icon-checkmark-stroke($green-icon); }
-    &.orange { @include icon-checkmark-stroke($orange-icon); }
-    &.red { @include icon-checkmark-stroke($red-icon); }
-    &.white { @include icon-checkmark-stroke($white-icon); }
+  &.dashing-icon__checkmark-stroke {
+    @include icon-checkmark-stroke(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-checkmark-stroke($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-checkmark-stroke($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-checkmark-stroke($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-checkmark-stroke($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-checkmark-stroke($dashing-icon--white); }
   }
 
-  &.icon-close,
-  &.icon-cancel {
-    @include icon-close($gray-800-icon);
-    &.blue { @include icon-close($blue-icon); }
-    &.green { @include icon-close($green-icon); }
-    &.orange { @include icon-close($orange-icon); }
-    &.red { @include icon-close($red-icon); }
-    &.white { @include icon-close($white-icon); }
+  &.dashing-icon__close,
+  &.dashing-icon__cancel,
+  &.dashing-icon__x {
+    @include icon-close(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-close($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-close($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-close($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-close($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-close($dashing-icon--white); }
   }
 
-  &.icon-comment {
-    @include icon-comment($gray-800-icon);
-    &.blue { @include icon-comment($blue-icon); }
-    &.green { @include icon-comment($green-icon); }
-    &.orange { @include icon-comment($orange-icon); }
-    &.red { @include icon-comment($red-icon); }
-    &.white { @include icon-comment($white-icon); }
+  &.dashing-icon__comment {
+    @include icon-comment(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-comment($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-comment($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-comment($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-comment($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-comment($dashing-icon--white); }
   }
 
-  &.icon-comment-add {
-    @include icon-comment-add($gray-800-icon);
-    &.blue { @include icon-comment-add($blue-icon); }
-    &.green { @include icon-comment-add($green-icon); }
-    &.orange { @include icon-comment-add($orange-icon); }
-    &.red { @include icon-comment-add($red-icon); }
-    &.white { @include icon-comment-add($white-icon); }
+  &.dashing-icon__comment-add {
+    @include icon-comment-add(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-comment-add($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-comment-add($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-comment-add($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-comment-add($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-comment-add($dashing-icon--white); }
   }
 
-  &.icon-fit-page {
-    @include icon-fit-page($gray-800-icon);
-    &.blue { @include icon-fit-page($blue-icon); }
-    &.green { @include icon-fit-page($green-icon); }
-    &.orange { @include icon-fit-page($orange-icon); }
-    &.red { @include icon-fit-page($red-icon); }
-    &.white { @include icon-fit-page($white-icon); }
+  &.dashing-icon__fit-page {
+    @include icon-fit-page(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-fit-page($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-fit-page($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-fit-page($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-fit-page($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-fit-page($dashing-icon--white); }
   }
 
-  &.icon-fit-width {
-    @include icon-fit-width($gray-800-icon);
-    &.blue { @include icon-fit-width($blue-icon); }
-    &.green { @include icon-fit-width($green-icon); }
-    &.orange { @include icon-fit-width($orange-icon); }
-    &.red { @include icon-fit-width($red-icon); }
-    &.white { @include icon-fit-width($white-icon); }
+  &.dashing-icon__fit-width {
+    @include icon-fit-width(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-fit-width($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-fit-width($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-fit-width($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-fit-width($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-fit-width($dashing-icon--white); }
   }
 
-  &.icon-flip {
-    @include icon-flip($gray-800-icon);
-    &.blue { @include icon-flip($blue-icon); }
-    &.green { @include icon-flip($green-icon); }
-    &.orange { @include icon-flip($orange-icon); }
-    &.red { @include icon-flip($red-icon); }
-    &.white { @include icon-flip($white-icon); }
+  &.dashing-icon__flip {
+    @include icon-flip(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-flip($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-flip($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-flip($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-flip($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-flip($dashing-icon--white); }
   }
 
-  &.icon-heart,
-  &.icon-need {
-    @include icon-heart($gray-800-icon);
-    &.blue { @include icon-heart($blue-icon); }
-    &.green { @include icon-heart($green-icon); }
-    &.orange { @include icon-heart($orange-icon); }
-    &.red { @include icon-heart($red-icon); }
-    &.white { @include icon-heart($white-icon); }
+  &.dashing-icon__heart,
+  &.dashing-icon__need {
+    @include icon-heart(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-heart($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-heart($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-heart($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-heart($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-heart($dashing-icon--white); }
   }
 
-  &.icon-hidden,
-  &.icon-hide {
-    @include icon-hidden($gray-800-icon);
-    &.blue { @include icon-hidden($blue-icon); }
-    &.green { @include icon-hidden($green-icon); }
-    &.orange { @include icon-hidden($orange-icon); }
-    &.red { @include icon-hidden($red-icon); }
-    &.white { @include icon-hidden($white-icon); }
+  &.dashing-icon__hidden,
+  &.dashing-icon__hide {
+    @include icon-hidden(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-hidden($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-hidden($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-hidden($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-hidden($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-hidden($dashing-icon--white); }
   }
 
-  &.icon-info-filled {
-    @include icon-info-filled($gray-800-icon);
-    &.blue { @include icon-info-filled($blue-icon); }
-    &.green { @include icon-info-filled($green-icon); }
-    &.orange { @include icon-info-filled($orange-icon); }
-    &.red { @include icon-info-filled($red-icon); }
-    &.white { @include icon-info-filled($white-icon); }
+  &.dashing-icon__info-filled {
+    @include icon-info-filled(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-info-filled($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-info-filled($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-info-filled($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-info-filled($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-info-filled($dashing-icon--white); }
   }
 
-  &.icon-info-stroke {
-    @include icon-info-stroke($gray-800-icon);
-    &.blue { @include icon-info-stroke($blue-icon); }
-    &.green { @include icon-info-stroke($green-icon); }
-    &.orange { @include icon-info-stroke($orange-icon); }
-    &.red { @include icon-info-stroke($red-icon); }
-    &.white { @include icon-info-stroke($white-icon); }
+  &.dashing-icon__info-stroke {
+    @include icon-info-stroke(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-info-stroke($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-info-stroke($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-info-stroke($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-info-stroke($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-info-stroke($dashing-icon--white); }
   }
 
-  &.icon-location,
-  &.icon-pin {
-    @include icon-location($gray-800-icon);
-    &.blue { @include icon-location($blue-icon); }
-    &.green { @include icon-location($green-icon); }
-    &.orange { @include icon-location($orange-icon); }
-    &.red { @include icon-location($red-icon); }
-    &.white { @include icon-location($white-icon); }
+  &.dashing-icon__location,
+  &.dashing-icon__pin {
+    @include icon-location(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-location($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-location($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-location($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-location($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-location($dashing-icon--white); }
   }
 
-  &.icon-locked {
-    @include icon-locked($gray-800-icon);
-    .action &, .button & { margin: 0.1rem 0.1rem 0 0; }
-    &.blue { @include icon-locked($blue-icon); }
-    &.green { @include icon-locked($green-icon); }
-    &.orange { @include icon-locked($orange-icon); }
-    &.red { @include icon-locked($red-icon); }
-    &.white { @include icon-locked($white-icon); }
+  &.dashing-icon__locked {
+    @include icon-locked(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-locked($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-locked($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-locked($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-locked($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-locked($dashing-icon--white); }
   }
 
-  &.icon-unlocked {
-    @include icon-unlocked($gray-800-icon);
-    .action &, .button & { margin: 0.1rem 0.3rem 0 0; }
-    &.blue { @include icon-unlocked($blue-icon); }
-    &.green { @include icon-unlocked($green-icon); }
-    &.orange { @include icon-unlocked($orange-icon); }
-    &.red { @include icon-unlocked($red-icon); }
-    &.white { @include icon-unlocked($white-icon); }
+  &.dashing-icon__unlocked {
+    @include icon-unlocked(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-unlocked($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-unlocked($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-unlocked($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-unlocked($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-unlocked($dashing-icon--white); }
   }
 
-  &.icon-minus,
-  &.icon-zoom-out {
-    @include icon-minus($gray-800-icon);
-    .action &, .button & { margin: 0.1rem 0.3rem 0 0; }
-    &.blue { @include icon-minus($blue-icon); }
-    &.green { @include icon-minus($green-icon); }
-    &.orange { @include icon-minus($orange-icon); }
-    &.red { @include icon-minus($red-icon); }
-    &.white { @include icon-minus($white-icon); }
+  &.dashing-icon__minus,
+  &.dashing-icon__zoom-out {
+    @include icon-minus(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-minus($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-minus($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-minus($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-minus($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-minus($dashing-icon--white); }
   }
 
-  &.icon-new-tab {
-    @include icon-new-tab($gray-800-icon);
-    &.blue { @include icon-new-tab($blue-icon); }
-    &.green { @include icon-new-tab($green-icon); }
-    &.orange { @include icon-new-tab($orange-icon); }
-    &.red { @include icon-new-tab($red-icon); }
-    &.white { @include icon-new-tab($white-icon); }
+  &.dashing-icon__new-tab {
+    @include icon-new-tab(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-new-tab($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-new-tab($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-new-tab($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-new-tab($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-new-tab($dashing-icon--white); }
   }
 
-  &.icon-note {
-    @include icon-note($gray-800-icon);
-    &.blue { @include icon-note($blue-icon); }
-    &.green { @include icon-note($green-icon); }
-    &.orange { @include icon-note($orange-icon); }
-    &.red { @include icon-note($red-icon); }
-    &.white { @include icon-note($white-icon); }
+  &.dashing-icon__note {
+    @include icon-note(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-note($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-note($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-note($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-note($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-note($dashing-icon--white); }
   }
 
-  &.icon-notification,
-  &.icon-bell {
-    @include icon-notification($gray-800-icon);
-    &.blue { @include icon-notification($blue-icon); }
-    &.green { @include icon-notification($green-icon); }
-    &.orange { @include icon-notification($orange-icon); }
-    &.red { @include icon-notification($red-icon); }
-    &.white { @include icon-notification($white-icon); }
+  &.dashing-icon__notification,
+  &.dashing-icon__bell {
+    @include icon-notification(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-notification($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-notification($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-notification($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-notification($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-notification($dashing-icon--white); }
   }
 
-  &.icon-pencil,
-  &.icon-edit {
-    @include icon-pencil($gray-800-icon);
-    &.blue { @include icon-pencil($blue-icon); }
-    &.green { @include icon-pencil($green-icon); }
-    &.orange { @include icon-pencil($orange-icon); }
-    &.red { @include icon-pencil($red-icon); }
-    &.white { @include icon-pencil($white-icon); }
+  &.dashing-icon__pencil,
+  &.dashing-icon__edit {
+    @include icon-pencil(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-pencil($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-pencil($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-pencil($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-pencil($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-pencil($dashing-icon--white); }
   }
 
-  &.icon-phone,
-  &.icon-call {
-    @include icon-phone($gray-800-icon);
-    &.blue { @include icon-phone($blue-icon); }
-    &.green { @include icon-phone($green-icon); }
-    &.orange { @include icon-phone($orange-icon); }
-    &.red { @include icon-phone($red-icon); }
-    &.white { @include icon-phone($white-icon); }
+  &.dashing-icon__phone,
+  &.dashing-icon__call {
+    @include icon-phone(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-phone($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-phone($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-phone($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-phone($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-phone($dashing-icon--white); }
   }
 
-  &.icon-play {
-    @include icon-play($gray-800-icon);
-    &.blue { @include icon-play($blue-icon); }
-    &.green { @include icon-play($green-icon); }
-    &.orange { @include icon-play($orange-icon); }
-    &.red { @include icon-play($red-icon); }
-    &.white { @include icon-play($white-icon); }
+  &.dashing-icon__play {
+    @include icon-play(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-play($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-play($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-play($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-play($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-play($dashing-icon--white); }
   }
 
-  &.icon-plus,
-  &.icon-add,
-  &.icon-zoom-in {
-    @include icon-plus($gray-800-icon);
-    &.blue { @include icon-plus($blue-icon); }
-    &.green { @include icon-plus($green-icon); }
-    &.orange { @include icon-plus($orange-icon); }
-    &.red { @include icon-plus($red-icon); }
-    &.white { @include icon-plus($white-icon); }
+  &.dashing-icon__plus,
+  &.dashing-icon__add,
+  &.dashing-icon__zoom-in {
+    @include icon-plus(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-plus($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-plus($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-plus($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-plus($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-plus($dashing-icon--white); }
   }
 
-  &.icon-quicknav {
-    @include icon-quicknav($gray-800-icon);
-    &.blue { @include icon-quicknav($blue-icon); }
-    &.green { @include icon-quicknav($green-icon); }
-    &.orange { @include icon-quicknav($orange-icon); }
-    &.red { @include icon-quicknav($red-icon); }
-    &.white { @include icon-quicknav($white-icon); }
+  &.dashing-icon__quicknav {
+    @include icon-quicknav(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-quicknav($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-quicknav($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-quicknav($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-quicknav($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-quicknav($dashing-icon--white); }
   }
 
-  &.icon-reply {
-    @include icon-reply($gray-800-icon);
-    &.blue { @include icon-reply($blue-icon); }
-    &.green { @include icon-reply($green-icon); }
-    &.orange { @include icon-reply($orange-icon); }
-    &.red { @include icon-reply($red-icon); }
-    &.white { @include icon-reply($white-icon); }
+  &.dashing-icon__reply {
+    @include icon-reply(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-reply($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-reply($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-reply($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-reply($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-reply($dashing-icon--white); }
   }
 
-  &.icon-replied {
-    @include icon-reply($gray-800-icon);
+  &.dashing-icon__replied {
+    @include icon-reply(dashing-icon--gray-800);
     transform: rotate(180deg);
-    &.blue { @include icon-reply($blue-icon); }
-    &.green { @include icon-reply($green-icon); }
-    &.orange { @include icon-reply($orange-icon); }
-    &.red { @include icon-reply($red-icon); }
-    &.white { @include icon-reply($white-icon); }
+    &.dashing-icon--blue { @include icon-reply($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-reply($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-reply($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-reply($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-reply($dashing-icon--white); }
   }
 
-  &.icon-rotate {
-    @include icon-rotate($gray-800-icon);
-    &.blue { @include icon-rotate($blue-icon); }
-    &.green { @include icon-rotate($green-icon); }
-    &.orange { @include icon-rotate($orange-icon); }
-    &.red { @include icon-rotate($red-icon); }
-    &.white { @include icon-rotate($white-icon); }
+  &.dashing-icon__rotate {
+    @include icon-rotate(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-rotate($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-rotate($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-rotate($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-rotate($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-rotate($dashing-icon--white); }
   }
 
-  &.icon-search {
-    @include icon-search($gray-800-icon);
-    &.blue { @include icon-search($blue-icon); }
-    &.green { @include icon-search($green-icon); }
-    &.orange { @include icon-search($orange-icon); }
-    &.red { @include icon-search($red-icon); }
-    &.white { @include icon-search($white-icon); }
+  &.dashing-icon__search {
+    @include icon-search(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-search($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-search($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-search($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-search($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-search($dashing-icon--white); }
   }
 
-  &.icon-settings {
-    @include icon-settings($gray-800-icon);
-    &.blue { @include icon-settings($blue-icon); }
-    &.green { @include icon-settings($green-icon); }
-    &.orange { @include icon-settings($orange-icon); }
-    &.red { @include icon-settings($red-icon); }
-    &.white { @include icon-settings($white-icon); }
+  &.dashing-icon__settings {
+    @include icon-settings(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-settings($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-settings($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-settings($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-settings($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-settings($dashing-icon--white); }
   }
 
-  &.icon-show,
-  &.icon-view {
-    @include icon-show($gray-800-icon);
-    &.blue { @include icon-show($blue-icon); }
-    &.green { @include icon-show($green-icon); }
-    &.orange { @include icon-show($orange-icon); }
-    &.red { @include icon-show($red-icon); }
-    &.white { @include icon-show($white-icon); }
+  &.dashing-icon__show,
+  &.dashing-icon__view {
+    @include icon-show(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-show($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-show($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-show($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-show($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-show($dashing-icon--white); }
   }
 
-  &.icon-time {
-    @include icon-time($gray-800-icon);
-    &.blue { @include icon-time($blue-icon); }
-    &.green { @include icon-time($green-icon); }
-    &.orange { @include icon-time($orange-icon); }
-    &.red { @include icon-time($red-icon); }
-    &.white { @include icon-time($white-icon); }
+  &.dashing-icon__time {
+    @include icon-time(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-time($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-time($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-time($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-time($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-time($dashing-icon--white); }
   }
 
-  &.icon-trash,
-  &.icon-remove,
-  &.icon-delete {
-    @include icon-trash($gray-800-icon);
-    &.blue { @include icon-trash($blue-icon); }
-    &.green { @include icon-trash($green-icon); }
-    &.orange { @include icon-trash($orange-icon); }
-    &.red { @include icon-trash($red-icon); }
-    &.white { @include icon-trash($white-icon); }
+  &.dashing-icon__trash,
+  &.dashing-icon__remove,
+  &.dashing-icon__delete {
+    @include icon-trash(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-trash($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-trash($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-trash($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-trash($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-trash($dashing-icon--white); }
   }
 
-  &.icon-view-double {
-    @include icon-view-double($gray-800-icon);
-    &.blue { @include icon-view-double($blue-icon); }
-    &.green { @include icon-view-double($green-icon); }
-    &.orange { @include icon-view-double($orange-icon); }
-    &.red { @include icon-view-double($red-icon); }
-    &.white { @include icon-view-double($white-icon); }
+  &.dashing-icon__view-double {
+    @include icon-view-double(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-view-double($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-view-double($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-view-double($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-view-double($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-view-double($dashing-icon--white); }
   }
 
-  &.icon-view-single {
-    @include icon-view-single($gray-800-icon);
-    &.blue { @include icon-view-single($blue-icon); }
-    &.green { @include icon-view-single($green-icon); }
-    &.orange { @include icon-view-single($orange-icon); }
-    &.red { @include icon-view-single($red-icon); }
-    &.white { @include icon-view-single($white-icon); }
+  &.dashing-icon__view-single {
+    @include icon-view-single(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-view-single($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-view-single($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-view-single($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-view-single($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-view-single($dashing-icon--white); }
   }
 
-  &.icon-question-filled {
-    @include icon-question-filled($gray-800-icon);
-    &.blue { @include icon-question-filled($blue-icon); }
-    &.green { @include icon-question-filled($green-icon); }
-    &.orange { @include icon-question-filled($orange-icon); }
-    &.red { @include icon-question-filled($red-icon); }
-    &.white { @include icon-question-filled($white-icon); }
+  &.dashing-icon__question-filled {
+    @include icon-question-filled(dashing-icon--gray-800);
+    &.dashing-icon--blue { @include icon-question-filled($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-question-filled($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-question-filled($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-question-filled($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-question-filled($dashing-icon--white); }
   }
 
-  &.icon-question-stroke {
-    @include icon-question-stroke($gray-800-icon);
+  &.dashing-icon__question-stroke {
+    @include icon-question-stroke(dashing-icon--gray-800);
     .action &, .button & { margin: 0.15rem 0 0 0.3rem; }
-    &.blue { @include icon-question-stroke($blue-icon); }
-    &.green { @include icon-question-stroke($green-icon); }
-    &.orange { @include icon-question-stroke($orange-icon); }
-    &.red { @include icon-question-stroke($red-icon); }
-    &.white { @include icon-question-stroke($white-icon); }
+    &.dashing-icon--blue { @include icon-question-stroke($dashing-icon--blue); }
+    &.dashing-icon--green { @include icon-question-stroke($dashing-icon--green); }
+    &.dashing-icon--orange { @include icon-question-stroke($dashing-icon--orange); }
+    &.dashing-icon--red { @include icon-question-stroke($dashing-icon--red); }
+    &.dashing-icon--white { @include icon-question-stroke($dashing-icon--white); }
   }
 }

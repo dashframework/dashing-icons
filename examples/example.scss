@@ -18,10 +18,16 @@
   }
 }
 
-.icon-container {
+.button-icon {
   @extend .icon-grid;
   border-color: $gray-100;
+  border-radius: 50px;
+  cursor: pointer;
   margin: 0 1rem 0 0;
+  padding: 0.5rem;
+  &:hover {
+    border-color: $gray-200;
+  }
 }
 
 hr {
