@@ -6,5 +6,3 @@ app/bower_components
 .idea
 bower_components/
 .sass-cache/
-*.css
-*.css.map
